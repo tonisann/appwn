@@ -11,6 +11,11 @@ def func4():
     return FileResponse("public/index.html")
 
 
+@app.get("/users/{id}")
+def users(id):
+    return {"user_id": id}
+
+
 @app.get("/dowload")
 def dowload():
     return FileResponse("public/index.html", filename="file001", media_type="application/octet-stream")
